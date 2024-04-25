@@ -86,7 +86,10 @@
         </executions>
         <configuration>
           <image>
-            <builder>dashaun/builder:tiny</builder>
+            <builder>paketobuildpacks/builder-jammy-buildpackless-tiny</builder>
+            <buildpacks>
+              <buildpack>paketobuildpacks/java-native-image</buildpack>
+            </buildpacks>
             <createdDate>now</createdDate>
             <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
           </image>
